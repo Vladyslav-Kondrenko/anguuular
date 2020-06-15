@@ -1,0 +1,80 @@
+.weatherWidgetRow{
+  color: #ffffff;
+}
+.fa-sun{
+  color: yellow;
+  filter: drop-shadow(1px 1px 10px yellow);
+  animation-name: sunShaning;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+.fa-moon{
+  color: white;
+  filter: drop-shadow(1px 1px 10px white);
+  animation-name: moonShaning;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+@keyframes moonShaning{
+  from{ 
+    filter: drop-shadow(1px 1px 4px white);
+    }
+  to{ 
+    filter: drop-shadow(1px 1px 10px white);
+    }
+}
+@keyframes sunShaning{
+  from{ 
+    filter: drop-shadow(1px 1px 4px yellow);
+    }
+  to{ 
+    filter: drop-shadow(1px 1px 10px yellow);
+    }
+}
+.weather-icon{
+  position: absolute;
+  margin-left: -50px;
+  animation-name: weatherMoove;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  opacity: 0.9;
+}
+@keyframes weatherMoove{
+  from{ 
+    transform: translateX(-20px)
+    }
+  to{ 
+    transform: translateX(20px)
+    }
+}
+.fa-cloud-showers-heavy{
+  color: #353545;
+}
+.fa-cloud-rain{
+  color: #A7A7AF;
+}
+.fa-snowflake{
+  color: #ffffff;
+}
+.fa-smog{
+  color: #CFCFCF;
+  opacity: 0.7;
+}
+.fa-cloud{
+  color: #E5E5E5;
+}
+
+input{
+  opacity: 0.7;
+  padding: 3px 2px;
+}
+button{
+  padding: 3px 1px;
+  opacity: 0.7;
+}

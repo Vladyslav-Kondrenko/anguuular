@@ -1,0 +1,25 @@
+
+  
+<div
+*ngIf="WeatherData"
+>
+<span class="weather-error"
+[ngClass]="{'weather-error-active': errorWeather}"
+>Error. Invalid city name</span>
+<!-- Ивент (input) записывает значние инпута, (keyup.enter) обновляет город -->
+  <input type="text" (input)="inputHandler($event)" (keyup.enter)="getWeatherData()"> <button (click)="getWeatherData()" >find</button>
+  <h3> {{ WeatherData.name }} </h3>
+  <i class="fas fa-3x"
+  [ngClass]="WeatherData.isDay == true? 'fa-sun' : 'fa-moon'"
+  ></i>
+  <i [class]="weatherIcon" ></i>
+  <h4> {{ WeatherData.temp_celcius }} °c </h4>
+  <h5> {{ day | date:"EEEE" }} </h5>
+  <p> {{ day | date }} </p>
+  <div id="divWeatherMain">
+    <div class="weatherWidgetRow"> {{ WeatherData.temp_min }} °c / {{ WeatherData.temp_max }} °c </div>
+    <div class="weatherWidgetRow"> Feels Like: {{ WeatherData.temp_feels_like }} °c </div>
+    <div class="weatherWidgetRow"> Humidity {{ WeatherData.main.humidity }} % </div>
+  </div>
+</div>
+<app-list (messageEvent)="recieveMessage($event)" ></app-list>
